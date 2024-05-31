@@ -1,7 +1,7 @@
 import './App.css';
 import Effect from './components/Effect/Effect';
 import Products from './components/Products/Products';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from './components/NavBar';
 import TypeWriter from './components/Effect/TypeWriter';
 import Tile from './components/Tile/Tile';
 // import {a,b} from './Products'; // destructuring in JS
