@@ -1,0 +1,24 @@
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    font-size: 25px;
+}
+
+a{
+    color: #d7d3cb;
+    text-decoration: none;
+}
+a:after{
+    content: '';
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: #d7d3cb;
+    transition: 300ms;
+}
+
+a:hover::after {
+    width: 100%;
+}
