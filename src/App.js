@@ -4,8 +4,31 @@ import Products from './components/Products/Products';
 import NavBar from './components/NavBar';
 import TypeWriter from './components/Effect/TypeWriter';
 import Tile from './components/Tile/Tile';
+import Caraousel from './components/carousel';
+import ProgressBar from './components/ProgressBar';
+import { useState, useEffect} from 'react';
+
 // import {a,b} from './Products'; // destructuring in JS
 function App() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prevProgress) => {
+        if (prevProgress >= 100) {
+          clearInterval(interval);
+          return prevProgress;
+        }
+        return prevProgress + 10;
+      });
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  
   return (
     <div className="App">
       <header>
@@ -28,8 +51,10 @@ function App() {
         linkText = "Read More"
         position = "img-right"
       />
+      <ProgressBar percentage = {progress}/>
+      <Caraousel />
       <Effect />
-      <Products />
+      {/* <Products /> */}
     </div>
   );
 }
