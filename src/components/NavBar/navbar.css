@@ -6,11 +6,11 @@
     font-size: 25px;
 }
 
-a{
+ul a{
     color: #d7d3cb;
     text-decoration: none;
 }
-a:after{
+ul a:after{
     content: '';
     width: 0px;
     height: 2px;
@@ -19,6 +19,6 @@ a:after{
     transition: 300ms;
 }
 
-a:hover::after {
+ul a:hover::after {
     width: 100%;
 }
