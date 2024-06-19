@@ -9,6 +9,7 @@ import Cart from './components/Cart/cart';
 // import {a,b} from './Products'; // destructuring in JS
 function App() {
   
+  
 
   return (
     <div className="App">
