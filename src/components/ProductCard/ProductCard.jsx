@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react"
 import Cart from "../Cart/Cart";
 import './ProductCard.css';
 
-function ProductCard({ product, cart, increaseQuantity, decreaseQuantity }) {
+function ProductCard({ product }) {
     var a = 10;
     a = a + 1;
     let pRef = useRef(0);
@@ -35,9 +35,9 @@ function ProductCard({ product, cart, increaseQuantity, decreaseQuantity }) {
         <p ref={pRef}> {product.price.value}</p>
         <input type="text" onChange={displayOutput} ref={iRef} value={inputV} />
         <p ref={oRef}>Over here the output would arrive - {inputV}</p>
-        <Cart product={product}  cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>
+        <Cart product={product}  />
         </div>
     );
 }
 
-export default ProductCard;
+export default React.memo(ProductCard);

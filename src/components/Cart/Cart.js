@@ -2,6 +2,7 @@ import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 
 function Cart({ product }) {
+    console.log()
     const { cart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
     if (!product || !product.id) {
         console.error("Product is undefined or does not have an id property", product);

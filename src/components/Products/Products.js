@@ -1,8 +1,9 @@
 import ProductCard from "../ProductCard/ProductCard";
 import Effect from "../Effect/Effect";
 import { useState, useEffect } from "react";
+import React from "react";
 import logo from './logo.png';
-function Products({cart, increaseQuantity, decreaseQuantity}) {
+function Products() {
   let [products, setProducts] = useState([]);
   useEffect(() => {
     fetch("https://602fc537a1e9d20017af105e.mockapi.io/api/v1/products").then(
@@ -52,7 +53,7 @@ function Products({cart, increaseQuantity, decreaseQuantity}) {
         <div><Effect /></div>
           {
               products.map(function (item, index) {
-                return (<ProductCard key={index}  product={item}  cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>)
+                return (<ProductCard key={index}  product={item}/>)
               })
           }
       </div>
@@ -61,7 +62,7 @@ function Products({cart, increaseQuantity, decreaseQuantity}) {
 
 export let a = 10;
 export let b = 20;
-export default Products;
+export default React.memo(Products);
 
 //named export = multipe in one file
 // default export - one in as file
