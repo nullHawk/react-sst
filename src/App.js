@@ -19,6 +19,7 @@ function App() {
           <Route path="/About" element={<AboutPage/>} />
         </Routes>
       </Router> */}
+      
       <Cart />
 
     </div>
