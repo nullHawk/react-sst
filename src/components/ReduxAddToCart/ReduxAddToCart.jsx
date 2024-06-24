@@ -5,12 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 function ReduxAddToCart({ product }) {
     const dispatch = useDispatch();
     // const { cart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
-    let state = useSelector(state => state.cart);
+    let quantity = useSelector((state) =>{
+        return state.items[product.id]? state.items[product.id].quantity: 0;
+    });
 
-    if (!product || !product.id) {
-        console.error("Product is undefined or does not have an id property", product);
-        return null; // or render some fallback UI
-    }
+    // if (!product || !product.id) {
+    //     console.error("Product is undefined or does not have an id property", product);
+    //     return null; // or render some fallback UI
+    // }
 
     function increase() {
         //dispatch({type:, payload})
@@ -22,7 +24,7 @@ function ReduxAddToCart({ product }) {
         dispatch({type: "REMOVE_FROM_CART", payload: product})
     }
 
-    const quantity = state.items[product.id] ? state.items[product.id].quantity : 0;
+    
 
     if (quantity === 0) {
         return (
