@@ -9,6 +9,8 @@ function ReduxAddToCart({ product }) {
         return state.items[product.id]? state.items[product.id].quantity: 0;
     });
 
+  
+
     // if (!product || !product.id) {
     //     console.error("Product is undefined or does not have an id property", product);
     //     return null; // or render some fallback UI
