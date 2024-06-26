@@ -8,6 +8,7 @@ import Cart from './components/Cart/Cart';
 import { useState } from 'react';
 import CartContext from './context/CartContext';
 import Products from './components/Products/Products';
+import DisplayCart from './components/ReduxAddToCart/DisplayCart';
 
 
 // import {a,b} from './Products'; // destructuring in JS
@@ -44,6 +45,7 @@ function App() {
     <CartContext.Provider value={{ cart, increaseQuantity, decreaseQuantity}}>
       <div className="App">
       <Products cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
+      <DisplayCart />
       </div>
     </CartContext.Provider>
   );
